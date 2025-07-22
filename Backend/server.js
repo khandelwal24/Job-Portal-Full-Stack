@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({extended:true}));
 app.use(cors({
-    origin:'https://job-portal-full-stack-frontend.pages.dev',
+    origin:'*',
     credentials:true,
     methods:['PUT','POST','GET','DELETE']
 }))
