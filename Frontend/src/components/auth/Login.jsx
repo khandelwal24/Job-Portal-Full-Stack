@@ -38,14 +38,14 @@ const Login = () => {
             dispatch(setloading(true));
             const res = await axios.post(`https://job-portal-full-stack.pages.dev/api/v1/user/login`,info,{headers:{"Content-Type":'application/json'}, withCredentials:true});
             if(res.data.success){
-              dispatch(setUser(res.data.rsp))
-              toast.success(res.data.message);
+              dispatch(setUser(res.data?.rsp))
+              toast.success(res.data?.message);
               setTimeout(()=>navigate('/'),1200);
             }
           }
           catch(error){
             console.log('error Occured',error);
-            toast.error(error.response.data.message)
+            toast.error(error.response?.data.message)
           }
           finally{
             dispatch(setloading(false));
