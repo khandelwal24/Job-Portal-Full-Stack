@@ -12,7 +12,7 @@ const UseGetAllJobs = () => {
 
     useEffect(()=>{
         const fetchAlljobs = async()=>{
-            const res = await axios.get(`http://localhost:1000/api/v1/jobs/getAllJobs?keyword=${searchQuery}`,{withCredentials:true});
+            const res = await axios.get(`https://job-portal-full-stack.pages.dev/api/v1/jobs/getAllJobs?keyword=${searchQuery}`,{withCredentials:true});
             if(res.data.success){
                 console.log(res.data.jobs);
                 // dispatch(setAlljobs([...alljobs,res?.data?.jobs]));

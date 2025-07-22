@@ -15,7 +15,7 @@ const CreateCompanies = () => {
 
     const RegisterNewComp = async()=>{
         try{
-            const res = await axios.post(`http://localhost:1000/api/v1/company/RegisterCompany`,{companyName},{headers:{"Content-Type":'application/json'}, withCredentials:true});
+            const res = await axios.post(`https://job-portal-full-stack.pages.dev/api/v1/company/RegisterCompany`,{companyName},{headers:{"Content-Type":'application/json'}, withCredentials:true});
             if(res.data?.success){
                 dispatch(setSingleCompany(res.data?.company));
                 toast.success(res.data?.message);

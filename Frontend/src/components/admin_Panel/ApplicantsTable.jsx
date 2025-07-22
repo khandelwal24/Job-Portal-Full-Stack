@@ -15,7 +15,7 @@ const ApplicantsTable = () => {
 
     const statusHandler = async(status,id)=>{
         try{
-            const res = await axios.post(`http://localhost:1000/api/v1/application/status/${id}/update`,{status},{withCredentials:true});
+            const res = await axios.post(`https://job-portal-full-stack.pages.dev/api/v1/application/status/${id}/update`,{status},{withCredentials:true});
             // console.log(res.data.application.status);
             if(res.data.success){
                 dispatch(setStatus(res.data.application.status));

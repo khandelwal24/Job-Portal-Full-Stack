@@ -11,7 +11,7 @@ const UseGetCompanyById = (companyId) => {
   useEffect(()=>{
     const fetchCompanyById = async()=>{
         try{
-            const res = await axios.get(`http://localhost:1000/api/v1/company/get_Company/${companyId}`,{withCredentials:true});
+            const res = await axios.get(`https://job-portal-full-stack.pages.dev/api/v1/company/get_Company/${companyId}`,{withCredentials:true});
             if(res.data.success){
                 dispatch(setSingleCompany(res.data.company));
                 toast.success(res.data.message);

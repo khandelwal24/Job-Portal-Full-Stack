@@ -18,7 +18,7 @@ const Navbar = () => {
 
     const LogOutHandler = async() =>{
         try{
-            const res = await axios.get(`http://localhost:1000/api/v1/user/logout`,{headers:{"Content-Type":'application/json'},withCredentials:true});
+            const res = await axios.get(`https://job-portal-full-stack.pages.dev/api/v1/user/logout`,{headers:{"Content-Type":'application/json'},withCredentials:true});
             if(res.data.success){
                 setTimeout(()=>navigate('/'),1200);
                 dispatch(setUser(null));

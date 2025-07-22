@@ -12,7 +12,7 @@ const UseGetAllRegCompanies = () => {
   useEffect(()=>{
     const registeredCompines = async()=>{
         try{
-            const res = await axios.get(`http://localhost:1000/api/v1/company/getAllcompany`,{withCredentials:true});
+            const res = await axios.get(`https://job-portal-full-stack.pages.dev/api/v1/company/getAllcompany`,{withCredentials:true});
             if(res.data.success){
                 dispatch(setAllRegComp(res.data.companies));
                 toast.success(res.data.message);
