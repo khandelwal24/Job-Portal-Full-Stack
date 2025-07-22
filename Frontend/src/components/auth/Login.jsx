@@ -36,7 +36,7 @@ const Login = () => {
           // console.log(info.password,info.email,info.role);
           try{
             dispatch(setloading(true));
-            const res = await axios.post(`http://localhost:1000/api/v1/user/login`,info,{headers:{"Content-Type":'application/json'}, withCredentials:true});
+            const res = await axios.post(`https://job-portal-full-stack.pages.dev/api/v1/user/login`,info,{headers:{"Content-Type":'application/json'}, withCredentials:true});
             if(res.data.success){
               dispatch(setUser(res.data.rsp))
               toast.success(res.data.message);

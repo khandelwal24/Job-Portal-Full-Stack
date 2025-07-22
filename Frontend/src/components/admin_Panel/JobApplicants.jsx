@@ -16,7 +16,7 @@ const JobApplicants = () => {
   useEffect(()=>{
     const fetchApplicants = async()=>{
       try{
-        const res = await axios.get(`http://localhost:1000/api/v1/application/${applicantId}/applicants`,{withCredentials:true});
+        const res = await axios.get(`https://job-portal-full-stack.pages.dev/api/v1/application/${applicantId}/applicants`,{withCredentials:true});
         console.log(res.data);
         if(res.data.success){
           dispatch(setApplicants(res.data.job));
