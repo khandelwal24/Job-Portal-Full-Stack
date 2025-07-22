@@ -11,7 +11,7 @@ const UseGetAllAdminJobs = () => {
 
         const fetchAdminJobs = async() =>{
             try{
-                const res = await axios.get(`https://job-portal-full-stack.pages.dev/api/v1/jobs/get_Admin_Job`,{withCredentials:true});
+                const res = await axios.get(`http://localhost:1000/api/v1/jobs/get_Admin_Job`,{withCredentials:true});
                 if(res.data.success){
                     console.log("DATA: ",res.data);
                     dispatch(setallAdminJobs(res.data.jobs));

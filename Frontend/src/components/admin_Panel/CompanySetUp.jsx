@@ -51,7 +51,7 @@ const CompanySetUp = () => {
         if(info.logo) formData.append('logo',info.logo);
         try{
             setloading(true);
-            const res = await axios.put(`https://job-portal-full-stack.pages.dev/api/v1/company/update/${companyId}`,formData,{headers:{"Content-Type":"multipart/form-data"},withCredentials:true});
+            const res = await axios.put(`http://localhost:1000/api/v1/company/update/${companyId}`,formData,{headers:{"Content-Type":"multipart/form-data"},withCredentials:true});
             if(res.data.success){
                 console.log(res.data);
                 toast.success(res.data.message);

@@ -46,7 +46,7 @@ const UpdateProfileModal = ({open,setOpen}) => {
         
             try{
                 dispatch(setloading(true));
-                const res = await axios.post(`https://job-portal-full-stack.pages.dev/api/v1/user/edits/profile`,formData,{headers:{"Content-Type":'multipart/form-data'}, withCredentials:true})
+                const res = await axios.post(`http://localhost:1000/api/v1/user/edits/profile`,formData,{headers:{"Content-Type":'multipart/form-data'}, withCredentials:true})
                 if(res.data.success){
                     dispatch(setUser(res.data.rsp));
                     toast.success(res.data.message);

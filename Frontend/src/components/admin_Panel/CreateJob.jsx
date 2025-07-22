@@ -47,7 +47,7 @@ const CreateJob = () => {
 
             try{
                 setloading(true);
-                const res = await axios.post(`https://job-portal-full-stack.pages.dev/api/v1/jobs/post_Job`,info,{headers:{"Content-Type":'application/json'},withCredentials:true});
+                const res = await axios.post(`http://localhost:1000/api/v1/jobs/post_Job`,info,{headers:{"Content-Type":'application/json'},withCredentials:true});
                 if(res.data.success){
                     toast.success(res.data.message);
                    setTimeout(()=>navigate('/admin/jobs'),1200);

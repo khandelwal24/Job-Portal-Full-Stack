@@ -49,7 +49,7 @@ const Signup = () => {
         if(info?.file) formData.append('file',info?.file);
         try{
             dispatch(setloading(true));
-            const res = await axios.post(`https://job-portal-full-stack.pages.dev/api/v1/user/register`,formData,{headers:{"Content-Type":'muiltipart/form-data'}, withCredentials:true},);
+            const res = await axios.post(`http://localhost:1000/api/v1/user/register`,formData,{headers:{"Content-Type":'muiltipart/form-data'}, withCredentials:true},);
             if(res.data.success){
                 toast.success(res.data.message);
                 setTimeout(()=>navigate('/login'),1200);

@@ -20,7 +20,7 @@ const JobDescription = () => {
   
   const applyJobHandler = async() =>{
     try{
-      const res = await axios.get(`https://job-portal-full-stack.pages.dev/api/v1/application/apply/${jobid}`,{withCredentials:true});
+      const res = await axios.get(`http://localhost:1000/api/v1/application/apply/${jobid}`,{withCredentials:true});
       if(res.data.success){
         setAlreadyApplied(true); //updating the local state 
         toast.success(res.data.message);
@@ -37,7 +37,7 @@ const JobDescription = () => {
     useEffect(()=>{
       const fetchSingleJob = async()=>{
           try{
-              const res = await axios.get(`https://job-portal-full-stack.pages.dev/api/v1/jobs/get/${jobid}`,{withCredentials:true})
+              const res = await axios.get(`http://localhost:1000/api/v1/jobs/get/${jobid}`,{withCredentials:true})
               if(res.data.success){
                   dispatch(setSinglejob(res.data.job));
                   setAlreadyApplied(res.data.job?.applications.some(appp=>appp.applicant === user?._id))
