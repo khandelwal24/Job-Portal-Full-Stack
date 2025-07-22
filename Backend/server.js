@@ -23,12 +23,15 @@ app.use(cors({
     methods:['PUT','POST','GET','DELETE']
 }))
 
+
+
 // Deployment part...
-// const _dirname = path.resolve();
-// app.use(express.static(path.join(_dirname,'/Frontend/dist')));
-// app.get('*',(_,res)=>{
-//        res.sendFile(path.resolve(_dirname,'Frontend','dist','index.html'))
-// })
+const _dirname = path.resolve();
+app.use(express.static(path.join(_dirname,'/Frontend/dist')));
+app.get('*',(_,res)=>{
+       res.sendFile(path.resolve(_dirname,'Frontend','dist','index.html'))
+})
+
 
 
 mongoose.connect(process.env.MONGO_URL,{dbName:'Job_Portal'}).then(()=>console.log('MongoDB connected')).catch(()=>console.log('Errro Occured'));
