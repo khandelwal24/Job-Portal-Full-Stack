@@ -10,7 +10,7 @@ const UseGetAppliedJobs = () => {
     useEffect(()=>{
         const fetchAppliedJobs = async()=>{
             try{
-                const res = await axios.get(`https://job-portal-full-stack.pages.dev/api/v1/application/get`,{withCredentials:true});
+                const res = await axios.get(`http://localhost:1000/api/v1/application/get`,{withCredentials:true});
                 if(res.data.success){
                     toast.success(res.data.message);
                     dispatch(setAllappliedJobs(res.data.Total_applications));
